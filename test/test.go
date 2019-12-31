@@ -41,7 +41,25 @@ func main(){
 	fmt.Printf("%T\n", val4)
 	fmt.Printf("%T\n", val6)
 	
-	if (val10 == 3.14){
+	if !(val10 < 3.14 && val10 != 0){
 		fmt.Println("The value is correct, bro", val10)
+	} else {
+		fmt.Println("The value is NOT correct, bro")
+	}
+	
+	var book = "Chirpstory"
+	switch book {
+		case "History" :
+			fmt.Println("The book name is history")
+		case "People" :
+			fmt.Println("The book name is people")
+		case "Technology" :
+			fmt.Println("The book name is technology")
+		default :
+			fmt.Println("We don't know the name!")
+	}
+	
+	for n:=1; n<3; n++{
+		fmt.Println("Hello world bro", n)
 	}
 }
