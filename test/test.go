@@ -18,7 +18,7 @@ func main(){
 	var val7 float64
 	var val8, val9, val10 = "foo", 8, 3.14
 	
-	val1--
+	val1-=1
 	fmt.Println(val1)
 	val1++
 	fmt.Println(Val1)
@@ -40,4 +40,8 @@ func main(){
 	fmt.Printf("%T\n", val5)
 	fmt.Printf("%T\n", val4)
 	fmt.Printf("%T\n", val6)
+	
+	if (val10 == 3.14){
+		fmt.Println("The value is correct, bro", val10)
+	}
 }
