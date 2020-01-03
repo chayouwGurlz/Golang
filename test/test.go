@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 func main(){
 	fmt.Println("Hello world")
@@ -62,4 +65,28 @@ func main(){
 	for n:=1; n<3; n++{
 		fmt.Println("Hello world bro", n)
 	}
+	
+	funcVoid("irine", 4)
+	fmt.Println("The return integer is", funcInt(4, 3))
+	var res1, res2 = funcMulti(4, 3)
+	fmt.Println("The return multiple integer are", res1, res2)
+}
+
+func funcVoid(name string, id int){ //void
+	fmt.Print("Hello world from func1 " + name)
+	fmt.Println(" with id", id +1)
+	
+	var str = fmt.Sprintf("Hi, this is reply from %s, with value %d", name, id+1)
+	fmt.Println(str)
+	
+	var str2 = strconv.Itoa(id+10)
+	fmt.Println("Nice, it will " + str2 + " The Value")
+}
+
+func funcInt(numA, numB int) int{ //return single int
+	return int(numA + numB)
+}
+
+func funcMulti(numA, numB int) (int, int){ //return multiple int
+	return numA + numB, numA * numB
 }
