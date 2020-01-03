@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"strconv"
 	"strings"
+	"math"
 )
 
 func main(){
@@ -73,7 +74,7 @@ func main(){
 	fmt.Println("The return multiple integer are", res1, res2)
 	
 	var str = strings.ToUpper(" sweet heart") //string func
-	fmt.Println("String ToUpper " +str)
+	fmt.Println("Strings ToUpper " +str)
 	str = strings.ToLower(str)
 	fmt.Println("Strings ToLower " +str)
 	str = strings.TrimSpace(str)
@@ -107,6 +108,19 @@ func main(){
 	fmt.Println("Strings Join", str)
 	str = strings.Repeat(str, 2)
 	fmt.Println("Strings Repeat", str)
+	
+	var val11 = math.Ceil(0.35) //math function
+	fmt.Println("Math Ceil", val11)
+	val11 = math.Max(0.35, -7.90)
+	fmt.Println("Math Max", val11)
+	val11 = math.Min(0.35, -7.90)
+	fmt.Println("Math Min", val11)
+	val11 = math.Remainder(0.35, -7.90)
+	fmt.Println("Math Remainder", val11)
+	val11 = math.Sqrt(-7.90)
+	fmt.Println("Math Sqrt", val11)
+	val11 = math.Mod(0.35, -7.90)
+	fmt.Println("Math Mod", val11)
 }
 
 func funcVoid(name string, id int){ //void
