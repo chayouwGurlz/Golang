@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"strconv"
+	"strings"
 )
 
 func main(){
@@ -70,6 +71,42 @@ func main(){
 	fmt.Println("The return integer is", funcInt(4, 3))
 	var res1, res2 = funcMulti(4, 3)
 	fmt.Println("The return multiple integer are", res1, res2)
+	
+	var str = strings.ToUpper(" sweet heart") //string func
+	fmt.Println("String ToUpper " +str)
+	str = strings.ToLower(str)
+	fmt.Println("Strings ToLower " +str)
+	str = strings.TrimSpace(str)
+	fmt.Println("Strings TrimSpace " +str)
+	str = strings.Trim(str, "art")
+	fmt.Println("Strings Trim " +str)
+	str = strings.TrimLeft(str, "sw")
+	fmt.Println("Strings TrimLeft " +str)
+	str = strings.TrimRight(str, " he")
+	fmt.Println("Strings TrimRight " +str)
+	var strToInt = strings.Count(str, "e")
+	fmt.Println("Strings Count", strToInt)
+	var strToBool = strings.Contains(str, "swe")
+	fmt.Println("Strings Contains", strToBool)
+	strToBool = strings.ContainsAny(str, "swe")
+	fmt.Println("Strings ContainsAny", strToBool)
+	strToInt = strings.Index(str, "e")
+	fmt.Println("Strings Index", strToInt)
+	strToInt = strings.LastIndex(str, "e")
+	fmt.Println("Strings LastIndex", strToInt)
+	strToInt = strings.LastIndexAny(str, "e")
+	fmt.Println("Strings LastIndexAny", strToInt)
+	str = strings.Replace(str, "e", "*", -1)
+	fmt.Println("Strings Replace", str)
+	str = "sweet.heart."
+	var arrStr = strings.Split(str, ".")
+	fmt.Println("Strings Split", arrStr)
+	arrStr = strings.SplitAfter(str, ".")
+	fmt.Println("Strings SplitAfter", arrStr)
+	str = strings.Join([]string{"Hello", str, "<3"}, ".")
+	fmt.Println("Strings Join", str)
+	str = strings.Repeat(str, 2)
+	fmt.Println("Strings Repeat", str)
 }
 
 func funcVoid(name string, id int){ //void
