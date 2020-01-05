@@ -2,21 +2,21 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"strconv"
 	"strings"
-	"math"
 )
 
-type cat struct{
-	name string
-	age int
+type cat struct {
+	name       string
+	age        int
 	isSleeping bool
 }
 
-func main(){
+func main() {
 	fmt.Println("Hello world")
 	fmt.Println("2nd Hello world")
-	
+
 	var val1 = 4
 	var Val1 = 9
 	/*var val2 = 6 + 8 //comment style
@@ -28,69 +28,69 @@ func main(){
 	var val6 float64 = 5.89
 	var val7 float64
 	var val8, val9, val10 = "foo", 8, 3.14
-	
-	val1-=1
+
+	val1 -= 2
 	fmt.Println(val1)
 	val1++
 	fmt.Println(Val1)
 	fmt.Println(Val1 % val5)
 	fmt.Println(Val1 + val1) //arithmetic
 	fmt.Println(val3 * val1)
-	
+
 	//fmt.Println(val5 - val4) //(mismatched types int and float64)
 	//fmt.Println(val2 / val7) //(mismatched types int and float64)
 	//fmt.Println(val6 % val4) //(operator % not defined on float64)
-	
+
 	fmt.Println(val2)
 	fmt.Println(val7)
 	fmt.Println(val8)
 	fmt.Println(val9)
 	fmt.Println(val10)
-	
+
 	fmt.Printf("%T\n", val3) //check datatype
 	fmt.Printf("%T\n", val5)
 	fmt.Printf("%T\n", val4)
 	fmt.Printf("%T\n", val6)
-	
-	if !(val10 < 3.14 && val10 != 0){
+
+	if !(val10 < 3.14 && val10 != 0) {
 		fmt.Println("The value is correct, bro", val10)
 	} else {
 		fmt.Println("The value is NOT correct, bro")
 	}
-	
+
 	var book = "Chirpstory"
 	switch book {
-		case "History" :
-			fmt.Println("The book name is history")
-		case "People" :
-			fmt.Println("The book name is people")
-		case "Technology" :
-			fmt.Println("The book name is technology")
-		default :
-			fmt.Println("We don't know the name!")
+	case "History":
+		fmt.Println("The book name is history")
+	case "People":
+		fmt.Println("The book name is people")
+	case "Technology":
+		fmt.Println("The book name is technology")
+	default:
+		fmt.Println("We don't know the name!")
 	}
-	
-	for n:=1; n<3; n++{
+
+	for n := 1; n < 3; n++ {
 		fmt.Println("Hello world bro", n)
 	}
-	
+
 	funcVoid("irine", 4)
 	fmt.Println("The return integer is", funcInt(4, 3))
 	var res1, res2 = funcMulti(4, 3)
 	fmt.Println("The return multiple integer are", res1, res2)
-	
+
 	var str = strings.ToUpper(" sweet heart") //string func
-	fmt.Println("Strings ToUpper " +str)
+	fmt.Println("Strings ToUpper " + str)
 	str = strings.ToLower(str)
-	fmt.Println("Strings ToLower " +str)
+	fmt.Println("Strings ToLower " + str)
 	str = strings.TrimSpace(str)
-	fmt.Println("Strings TrimSpace " +str)
+	fmt.Println("Strings TrimSpace " + str)
 	str = strings.Trim(str, "art")
-	fmt.Println("Strings Trim " +str)
+	fmt.Println("Strings Trim " + str)
 	str = strings.TrimLeft(str, "sw")
-	fmt.Println("Strings TrimLeft " +str)
+	fmt.Println("Strings TrimLeft " + str)
 	str = strings.TrimRight(str, " he")
-	fmt.Println("Strings TrimRight " +str)
+	fmt.Println("Strings TrimRight " + str)
 	var strToInt = strings.Count(str, "e")
 	fmt.Println("Strings Count", strToInt)
 	var strToBool = strings.Contains(str, "swe")
@@ -114,7 +114,7 @@ func main(){
 	fmt.Println("Strings Join", str)
 	str = strings.Repeat(str, 2)
 	fmt.Println("Strings Repeat", str)
-	
+
 	var val11 = math.Ceil(0.35) //math function
 	fmt.Println("Math Ceil", val11)
 	val11 = math.Max(0.35, -7.90)
@@ -127,55 +127,78 @@ func main(){
 	fmt.Println("Math Sqrt", val11)
 	val11 = math.Mod(0.35, -7.90)
 	fmt.Println("Math Mod", val11)
-	
-	var arrInt = [...]int{8,9} //array
-	var arrString = [...]string{"Dewi","Sartika"}
+
+	var arrInt = [...]int{8, 9} //array
+	var arrString = [...]string{"Dewi", "Sartika"}
 	var arrString1 = [...]string{"Kapten", "Pattimura"}
 	fmt.Println("Array of Int", arrInt)
 	fmt.Println("Array of String", arrString)
 	fmt.Println("Array of String1", arrString1)
-	fmt.Println("Sum Array of Int", arrInt[0] + arrInt[1])
+	fmt.Println("Sum Array of Int", arrInt[0]+arrInt[1])
 	fmt.Println("Comparation arrString & arrString1", arrString == arrString1)
-	
-	var multiArrayInt = [...][3]int{{7,8,9}, {1,2}}
+
+	var multiArrayInt = [...][3]int{{7, 8, 9}, {1, 2}}
 	fmt.Println("Multiple Array of Int", multiArrayInt)
-	fmt.Println("Min Multiple Array of Int row 3", multiArrayInt[0][2] - multiArrayInt[1][2])
-	
+	fmt.Println("Min Multiple Array of Int row 3", multiArrayInt[0][2]-multiArrayInt[1][2])
+
 	var val12 = 89 //pointer
 	var p1 = &val12
 	var p2 = &p1
 	fmt.Println("value val12 ", val12, &val12)
 	fmt.Println("Pointer p1 ", *p1, p1)
 	fmt.Println("Pointer p2 ", *p2, **p2)
-	fmt.Println("arithmetic cannot applied to pointer", *p1 + 1)
-	
-	var myCat cat
+	fmt.Println("arithmetic cannot applied to pointer", *p1+1)
+
+	var myCat cat //struct
 	myCat = funcStruct(myCat)
 	fmt.Println("Cat name", myCat.name)
 	fmt.Println("Cat age", myCat.age)
 	fmt.Println("Cat is sleeping ?", myCat.isSleeping)
+
+	var slice = make([]int, 2, 2) //slice
+	fmt.Println("slice init", slice)
+	fmt.Println("slice init length", len(slice))
+	fmt.Println("slice init capacity", cap(slice))
+	slice = append(slice, 1, 2, 3)
+	fmt.Println("first append", slice)
+	fmt.Println("first append length", len(slice))
+	fmt.Println("first append capacity", cap(slice))
+	slice = append(slice[:0], slice[2:]...)
+	fmt.Println("after slice", slice)
+	fmt.Println("after slice length", len(slice))
+	fmt.Println("after slice capacity", cap(slice))
+
+	var arrRange = [4]string{"we", "come", "back", "again"} //range iteration
+	for c := range arrRange {
+		fmt.Println("range index", c, "has value", arrRange[c])
+	}
+
+	var mapRange = map[string]string{"East Java": "Surabaya", "Central Java": "Semarang", "West Java": "Bandung"} //map range iteration
+	for province, capital := range mapRange {
+		fmt.Println(province, "has capital city", capital)
+	}
 }
 
-func funcVoid(name string, id int){ //void
+func funcVoid(name string, id int) { //void
 	fmt.Print("Hello world from func1 " + name)
-	fmt.Println(" with id", id +1)
-	
+	fmt.Println(" with id", id+1)
+
 	var str = fmt.Sprintf("Hi, this is reply from %s, with value %d", name, id+1)
 	fmt.Println(str)
-	
-	var str2 = strconv.Itoa(id+10)
+
+	var str2 = strconv.Itoa(id + 10)
 	fmt.Println("Nice, it will " + str2 + " The Value")
 }
 
-func funcInt(numA, numB int) int{ //return single int
+func funcInt(numA, numB int) int { //return single int
 	return int(numA + numB)
 }
 
-func funcMulti(numA, numB int) (int, int){ //return multiple int
+func funcMulti(numA, numB int) (int, int) { //return multiple int
 	return numA + numB, numA * numB
 }
 
-func funcStruct(cute cat) cat{ //return struct datatype
+func funcStruct(cute cat) cat { //return struct datatype
 	cute.name = "Nayana"
 	cute.age = 5
 	cute.isSleeping = false
