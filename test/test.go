@@ -7,6 +7,12 @@ import (
 	"math"
 )
 
+type cat struct{
+	name string
+	age int
+	isSleeping bool
+}
+
 func main(){
 	fmt.Println("Hello world")
 	fmt.Println("2nd Hello world")
@@ -122,7 +128,7 @@ func main(){
 	val11 = math.Mod(0.35, -7.90)
 	fmt.Println("Math Mod", val11)
 	
-	var arrInt = [...]int{8,9}
+	var arrInt = [...]int{8,9} //array
 	var arrString = [...]string{"Dewi","Sartika"}
 	var arrString1 = [...]string{"Kapten", "Pattimura"}
 	fmt.Println("Array of Int", arrInt)
@@ -134,6 +140,20 @@ func main(){
 	var multiArrayInt = [...][3]int{{7,8,9}, {1,2}}
 	fmt.Println("Multiple Array of Int", multiArrayInt)
 	fmt.Println("Min Multiple Array of Int row 3", multiArrayInt[0][2] - multiArrayInt[1][2])
+	
+	var val12 = 89 //pointer
+	var p1 = &val12
+	var p2 = &p1
+	fmt.Println("value val12 ", val12, &val12)
+	fmt.Println("Pointer p1 ", *p1, p1)
+	fmt.Println("Pointer p2 ", *p2, **p2)
+	fmt.Println("arithmetic cannot applied to pointer", *p1 + 1)
+	
+	var myCat cat
+	myCat = funcStruct(myCat)
+	fmt.Println("Cat name", myCat.name)
+	fmt.Println("Cat age", myCat.age)
+	fmt.Println("Cat is sleeping ?", myCat.isSleeping)
 }
 
 func funcVoid(name string, id int){ //void
@@ -153,4 +173,11 @@ func funcInt(numA, numB int) int{ //return single int
 
 func funcMulti(numA, numB int) (int, int){ //return multiple int
 	return numA + numB, numA * numB
+}
+
+func funcStruct(cute cat) cat{ //return struct datatype
+	cute.name = "Nayana"
+	cute.age = 5
+	cute.isSleeping = false
+	return cute
 }
