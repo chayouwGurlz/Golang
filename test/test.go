@@ -121,6 +121,19 @@ func main(){
 	fmt.Println("Math Sqrt", val11)
 	val11 = math.Mod(0.35, -7.90)
 	fmt.Println("Math Mod", val11)
+	
+	var arrInt = [...]int{8,9}
+	var arrString = [...]string{"Dewi","Sartika"}
+	var arrString1 = [...]string{"Kapten", "Pattimura"}
+	fmt.Println("Array of Int", arrInt)
+	fmt.Println("Array of String", arrString)
+	fmt.Println("Array of String1", arrString1)
+	fmt.Println("Sum Array of Int", arrInt[0] + arrInt[1])
+	fmt.Println("Comparation arrString & arrString1", arrString == arrString1)
+	
+	var multiArrayInt = [...][3]int{{7,8,9}, {1,2}}
+	fmt.Println("Multiple Array of Int", multiArrayInt)
+	fmt.Println("Min Multiple Array of Int row 3", multiArrayInt[0][2] - multiArrayInt[1][2])
 }
 
 func funcVoid(name string, id int){ //void
